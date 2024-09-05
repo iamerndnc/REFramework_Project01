@@ -1,0 +1,231 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AcademyLogin" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_strUsername" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1253,1843</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>AcademyLogin_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AcademyLogin" sap:VirtualizedContainerService.HintSize="592,1778" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="UiPathAcademy" />
+      <Variable x:TypeArguments="x:String" Name="strUsername" />
+      <Variable x:TypeArguments="ss:SecureString" Name="secStrPassword" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[UiPathAcademy]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_Config("UiPathAcademyURL").ToString().Trim()]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Login_Information" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="530,80" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secStrPassword]" Username="[strUsername]" />
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="530,1441" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Url="[UiPathAcademy]">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1339" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Delay_3" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ClickLogin workflow" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Utilities\GenericActivities\ClickActivity.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_WorkflowName">Click1</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ScreenName" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementName">Login</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementType" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_Selector">&lt;html app='chrome.exe' title='*' /&gt;&lt;webctrl aaname='Login/Sign Up' tag='A' /&gt;</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ImagePath" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_ImageTimeout" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolSimulateClick" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolImageBottomRight" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Delay_4" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Email workflow" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Utilities\GenericActivities\ClickActivity.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_WorkflowName">Click2</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ScreenName" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementName">Email</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementType" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_Selector">&lt;html app='chrome.exe' title='*' /&gt;&lt;webctrl aaname='Continue with Email' tag='BUTTON' /&gt;</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ImagePath" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_ImageTimeout" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolSimulateClick" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolImageBottomRight" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Delay_5" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_strUsername]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[strUsername]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TypeIntoActivity workflow" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Utilities\GenericActivities\TypeIntoActivity.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ImagePath" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementType" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_Selector">
+                  <Literal x:TypeArguments="x:String">&lt;html app='chrome.exe' title='*' /&gt;&lt;webctrl tag='INPUT' /&gt;</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementName">
+                  <Literal x:TypeArguments="x:String">Button</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ScreenName" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_WorkflowName" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_Value">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_strUsername" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_ImageTimeout" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_strUsername" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:TypeSecureText AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Secure Text 'INPUT  :r0:'" EmptyField="True" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[secStrPassword]">
+              <ui:TypeSecureText.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a43b34cc-90cd-4deb-8c14-df9b684f2c83" InformativeScreenshot="76b3ae611bf6bacbf3b74860d8b99555" Selector="&lt;webctrl tag='INPUT' type='password' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeSecureText.Target>
+            </ui:TypeSecureText>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ClickSignIn workflow" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Utilities\GenericActivities\ClickActivity.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_WorkflowName">
+                  <Literal x:TypeArguments="x:String">Click1</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ScreenName" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementName">
+                  <Literal x:TypeArguments="x:String">Login</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementType" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_Selector">
+                  <Literal x:TypeArguments="x:String">&lt;html app='chrome.exe' title='Continue with UiPath' /&gt;&lt;webctrl tag='BUTTON' type='submit' /&gt;</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ImagePath" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_ImageTimeout" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolSimulateClick" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolImageBottomRight" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Delay_7" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ClickCourses workflow" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Utilities\GenericActivities\ClickActivity.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_WorkflowName">
+                  <Literal x:TypeArguments="x:String">Click1</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ScreenName" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementName">
+                  <Literal x:TypeArguments="x:String">Login</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ElementType" />
+                <InArgument x:TypeArguments="x:String" x:Key="in_Selector">
+                  <Literal x:TypeArguments="x:String">&lt;html app='chrome.exe' title='RPA and AI in Automation Training | UiPath' /&gt;&lt;webctrl aaname='Courses' parentid='topMenu' tag='SPAN' /&gt;</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ImagePath" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_Timeout" />
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_ImageTimeout" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolSimulateClick" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolImageBottomRight" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>
